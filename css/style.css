@@ -98,14 +98,14 @@ section {
 }
 
 .slide1 {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/bg_banner2.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/cleaning_.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .slide2 {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/bg_banner1.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/faster-delivery.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
