@@ -1,3 +1,7 @@
+<?php
+// Only process the form if it is submitted via POST
+include('check_response.php');
+?>
 <!doctype html>
 <html lang="en">
 
@@ -17,17 +21,7 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
-<?php
-session_start();
 
-if (isset($_SESSION['response'])) {
-    header('Content-Type: application/json');
-    echo json_encode($_SESSION['response']);
-    unset($_SESSION['response']);
-} else {
-    http_response_code(204);
-}
-?>
 
     <!-- TOP NAV -->
     <div class="top-nav" id="startsida">
@@ -593,30 +587,42 @@ if (isset($_SESSION['response'])) {
             }
 
             // Handle form submission via AJAX
-                // Check if a response is stored in the session
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'check_response.php');
-            xhr.setRequestHeader('Accept', 'application/json');
-            xhr.onreadystatechange = () => {
-                if (xhr.readyState !== XMLHttpRequest.DONE) return;
-                const response = JSON.parse(xhr.responseText);
-                if (response.status === 'success') {
-                    // Handle successful form submission
-                    Swal.fire(
-                        'Success!',
-                        response.message,
-                        'success'
-                    );
-                } else if (response.status === 'error') {
-                    // Handle error
-                    Swal.fire(
-                        'Error',
-                        response.message,
-                        'error'
-                    );
-                }
-            };
-            xhr.send();
+                const form = document.querySelector('form');
+                form.addEventListener('submit', (event) => {
+                    event.preventDefault
+                    const formData = new FormData(form);
+                    const xhr = new XMLHttpRequest();
+                    xhr.open(form.method, form.action);
+                    xhr.setRequestHeader('Accept', 'application/json');
+                    xhr.onreadystatechange = () => {
+                        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+                        if (xhr.status === 200) {
+                            // Handle success response
+                            const response = JSON.parse(xhr.response);
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: response.message,
+                            });
+                            form.reset();
+                        } else {
+                            // Handle error response
+                            const response = JSON.parse(xhr.response);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: response.message,
+                            });
+                        }
+                        //catch error
+                        
+
+                    };
+                    xhr.send(formData);
+                });
+
+
+
     </script>
     
 </body>
