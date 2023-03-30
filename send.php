@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Handle form validation errors
         http_response_code(400);
         $response = array('status' => 'error', 'message' => 'Please fill in all required fields.');
+        header('Content-Type: application/json');
         echo json_encode($response);
         exit;
     }
@@ -28,17 +29,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Handle success
         http_response_code(200);
         $response = array('status' => 'success', 'message' => 'Your message has been sent successfully.');
+        header('Content-Type: application/json');
         echo json_encode($response);
         exit;
     } else {
         // Handle email sending errors
         http_response_code(500);
         $response = array('status' => 'error', 'message' => 'An error occurred while sending your message. Please try again later.');
+        header('Content-Type: application/json');
         echo json_encode($response);
         exit;
     }
 }
 
+// Redirect to index.html page if accessed directly
 header('Location: index.html');
 exit;
 ?>
