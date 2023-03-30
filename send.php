@@ -20,9 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Set up email
     $to = 'info@okioma.se';
-    $subject = 'Ny E-post FrÃ¥n'.$name;
-    $message = "Name: $name\nUsername: $username\nEmail: $email\nPhone: $phone\nContent: $content";
-    $headers = "From: $email\r\nReply-To: $email\r\nX-Mailer: PHP/" . phpversion();
+    $subject = 'Ny E-post FrÃ¥n '.$name;
+    $message = "Namn: $name\nAnvÃ¤ndarnamn: $username\nE-post: $email\nTelefon: $phone\nInnehÃ¥ll: $content";
+    $headers = "FrÃ¥n: $email\r\nReply-To: $email\r\nX-Mailer: PHP/" . phpversion();
 
     // Send email
     if (mail($to, $subject, $message, $headers)) {
