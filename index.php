@@ -1,42 +1,5 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.css">
-
-    <title>Okioma</title>
-</head>
-
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
-
-
-    <!-- TOP NAV -->
-    <div class="top-nav" id="startsida">
-        <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-auto">
-                    <p> <i class='bx bxs-envelope'></i> info@okioma.se</p>
-                    <p> <i class='bx bxs-phone-call'></i> +46 760-680-110</p>
-                </div>
-                <div class="col-auto social-icons">
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                    <a href="#"><i class='bx bxl-instagram'></i></a>
-                    <a href="#"><i class='bx bxl-whatsapp'></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<!-- include top_header.php -->
+<?php include 'top_header.php'; ?>
     <!-- BOTTOM NAV -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
         <div class="container">
@@ -555,6 +518,8 @@
             </div>
         </div>
     </div>
+<!-- include footer.php -->
+    <?php include 'footer.php'; ?>
 
 
 
@@ -563,75 +528,3 @@
 
 
 
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        if (window.location.search.indexOf('mailsent') > -1) {
-            Swal.fire(
-                'Success!',
-                'Your message has been sent.',
-                'success'
-            ).then(() => {
-                const url = new URL(window.location.href);
-                url.searchParams.delete('mailsent');
-                window.history.replaceState(null, null, url);
-            });
-        }
-        if (window.location.search.indexOf('mailsenterror') > -1) {
-            Swal.fire(
-                'Error!',
-                'Your message has not been sent.',
-                'error'
-            ).then(() => {
-                const url = new URL(window.location.href);
-                url.searchParams.delete('mailsenterror');
-                window.history.replaceState(null, null, url);
-            });
-        }
-        
-            // Handle form submission via AJAX
-                const form = document.querySelector('form');
-                form.addEventListener('submit', (event) => {
-                    event.preventDefault
-                    const formData = new FormData(form);
-                    const xhr = new XMLHttpRequest();
-                    xhr.open(form.method, form.action);
-                    xhr.setRequestHeader('Accept', 'application/json');
-                    xhr.onreadystatechange = () => {
-                        if (xhr.readyState !== XMLHttpRequest.DONE) return;
-                        if (xhr.status === 200) {
-                            // Handle success response
-                            const response = JSON.parse(xhr.response);
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success',
-                                text: response.message,
-                            });
-                            form.reset();
-                        } else {
-                            // Handle error response
-                            const response = JSON.parse(xhr.response);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Error',
-                                text: response.message,
-                            });
-                        }
-                        //catch error
-                        
-
-                    };
-                    xhr.send(formData);
-                });
-
-
-
-    </script>
-    
-</body>
-
-</html>

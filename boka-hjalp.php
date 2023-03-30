@@ -1,41 +1,5 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.css">
-
-    <title>Okioma</title>
-</head>
-
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
-
-
-    <!-- TOP NAV -->
-    <div class="top-nav" id="startsida">
-        <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-auto">
-                    <p> <i class='bx bxs-envelope'></i> info@okioma.se</p>
-                    <p> <i class='bx bxs-phone-call'></i> +46 760-680-110</p>
-                </div>
-                <div class="col-auto social-icons">
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                    <a href="#"><i class='bx bxl-instagram'></i></a>
-                    <a href="#"><i class='bx bxl-whatsapp'></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- include top_header.php -->
+<?php include 'top_header.php'; ?>
 
     <!-- BOTTOM NAV -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
@@ -221,10 +185,5 @@
 
 
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/app.js"></script>
-</body>
-
-</html>
+<!-- include footer.php -->
+<?php include 'footer.php'; ?>

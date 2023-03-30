@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Handle form validation errors
         http_response_code(400);
         $response = array('status' => 'error', 'message' => 'Please fill in all required fields.');
-        header('Location: index.php', true, 400);
+        header('Location: index.php?felnull');
         echo json_encode($response);
         exit;
     }
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Handle success
         http_response_code(200);
         $response = array('status' => 'success', 'message' => 'Your message has been sent successfully.');
-        header('Location: index.php?mailsent');
+        header('Location: index.php?framgång');
 
         echo json_encode($response);
         exit;
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Handle email sending errors
         http_response_code(500);
         $response = array('status' => 'error', 'message' => 'An error occurred while sending your message. Please try again later.');
-        header('Location: index.php?mailsenterror');
+        header('Location: index.php?fel');
         echo json_encode($response);
         exit;
     }
