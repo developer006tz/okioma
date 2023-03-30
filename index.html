@@ -593,30 +593,42 @@
                     xhr.onreadystatechange = () => {
                         if (xhr.readyState !== XMLHttpRequest.DONE) return;
                         if (xhr.status === 200) {
-                            // Handle successful form submission
-                            // For example, display a success message and reset the form
-                            Swal.fire(
-                                'Success!',
-                                'Your message has been sent.',
-                                'success'
-                            );
+                            // Handle success response
+                            const response = JSON.parse(xhr.response);
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Success',
+                                text: response.message,
+                            });
                             form.reset();
                         } else {
-                            // Handle error
-                            // For example, display an error message
-                            Swal.fire(
-                                'Error',
-                                'An error occurred while submitting the form.',
-                                'error'
-                            );
+                            // Handle error response
+                            const response = JSON.parse(xhr.response);
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: response.message,
+                            });
                         }
+                        //catch error
+                        
+
                     };
                     xhr.send(formData);
+                }).catch(error => {
+                    console.error('Error:', error);
+                    // Display error message
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong! Please try again later.',
+                    });
                 });
 
 
 
     </script>
+    
 </body>
 
 </html>
