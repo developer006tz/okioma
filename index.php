@@ -1,14 +1,3 @@
-<?php
-session_start();
-
-if (isset($_SESSION['response'])) {
-    header('Content-Type: application/json');
-    echo json_encode($_SESSION['response']);
-    unset($_SESSION['response']);
-} else {
-    http_response_code(204);
-}
-?>
 <!doctype html>
 <html lang="en">
 
@@ -28,7 +17,17 @@ if (isset($_SESSION['response'])) {
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+<?php
+session_start();
 
+if (isset($_SESSION['response'])) {
+    header('Content-Type: application/json');
+    echo json_encode($_SESSION['response']);
+    unset($_SESSION['response']);
+} else {
+    http_response_code(204);
+}
+?>
 
     <!-- TOP NAV -->
     <div class="top-nav" id="startsida">
