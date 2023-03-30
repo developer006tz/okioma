@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Set up email
     $to = 'info@okioma.se';
-    $subject = 'New Form Submission';
+    $subject = 'Ny E-post FrÃ¥n'.$name;
     $message = "Name: $name\nUsername: $username\nEmail: $email\nPhone: $phone\nContent: $content";
     $headers = "From: $email\r\nReply-To: $email\r\nX-Mailer: PHP/" . phpversion();
 
