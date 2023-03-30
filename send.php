@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($name) || empty($email) || empty($content)) {
         // Handle form validation errors
         $_SESSION['response'] = array('status' => 'error', 'message' => 'Please fill in all required fields.');
-        header('Location: index.html');
+        header('Location: index.html?mailsenterror');
         exit;
     }
 
@@ -28,12 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mail($to, $subject, $message, $headers)) {
         // Handle success
         $_SESSION['response'] = array('status' => 'success', 'message' => 'Your message has been sent successfully.');
-        header('Location: index.html');
+        header('Location: index.html?mailsent');
         exit;
     } else {
         // Handle email sending errors
         $_SESSION['response'] = array('status' => 'error', 'message' => 'An error occurred while sending your message. Please try again later.');
-        header('Location: index.html');
+        header('Location: index.html?mailsenterror');
         exit;
     }
 }

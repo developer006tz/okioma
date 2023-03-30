@@ -1,6 +1,13 @@
 <?php
-// Only process the form if it is submitted via POST
-include('check_response.php');
+session_start();
+
+if (isset($_SESSION['response'])) {
+    header('Content-Type: application/json');
+    echo json_encode($_SESSION['response']);
+    unset($_SESSION['response']);
+} else {
+    http_response_code(204);
+}
 ?>
 <!doctype html>
 <html lang="en">
