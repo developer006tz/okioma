@@ -4,14 +4,14 @@
 <script src="js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    if (window.location.search.indexOf('framgång') > -1) {
+    if (window.location.search.indexOf('skickad') > -1) {
         Swal.fire(
             'framgång!',
             'Ditt meddelande har skickats.',
             'success'
         ).then(() => {
             const url = new URL(window.location.href);
-            url.searchParams.delete('framgång');
+            url.searchParams.delete('skickad');
             window.history.replaceState(null, null, url);
         });
     }

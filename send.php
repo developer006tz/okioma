@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Handle success
         http_response_code(200);
         $response = array('status' => 'success', 'message' => 'Your message has been sent successfully.');
-        header('Location: index.php?framgång');
+        header('Location: index.php?skickad');
 
         echo json_encode($response);
         exit;
