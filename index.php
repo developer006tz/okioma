@@ -1,7 +1,3 @@
-<?php
-// Only process the form if it is submitted via POST
-include('check_response.php');
-?>
 <!doctype html>
 <html lang="en">
 
