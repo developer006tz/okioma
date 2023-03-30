@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 // Only process the form if it is submitted via POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Sanitize form inputs
@@ -13,8 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate form inputs
     if (empty($name) || empty($email) || empty($content)) {
         // Handle form validation errors
-        $_SESSION['response'] = array('status' => 'error', 'message' => 'Please fill in all required fields.');
-        header('Location: index.php?mailsenterror');
+        http_response_code(400);
+        $response = array('status' => 'error', 'message' => 'Please fill in all required fields.');
+        header('Location: index.php', true, 400);
+        echo json_encode($response);
         exit;
     }
 
@@ -27,13 +27,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Send email
     if (mail($to, $subject, $message, $headers)) {
         // Handle success
-        $_SESSION['response'] = array('status' => 'success', 'message' => 'Your message has been sent successfully.');
+        http_response_code(200);
+        $response = array('status' => 'success', 'message' => 'Your message has been sent successfully.');
         header('Location: index.php?mailsent');
+
+        echo json_encode($response);
         exit;
     } else {
         // Handle email sending errors
-        $_SESSION['response'] = array('status' => 'error', 'message' => 'An error occurred while sending your message. Please try again later.');
+        http_response_code(500);
+        $response = array('status' => 'error', 'message' => 'An error occurred while sending your message. Please try again later.');
         header('Location: index.php?mailsenterror');
+        echo json_encode($response);
         exit;
     }
 }

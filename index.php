@@ -570,18 +570,29 @@
     <script src="js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        const urlParams = new URLSearchParams(window.location.search);
-            const mailsent = urlParams.get('mailsent');
-
-            // Display success message if URL contains "mailsent" parameter
-            if (mailsent === 'true') {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success',
-                    text: 'Your message has been sent successfully.',
-                });
-            }
-
+        if (window.location.search.indexOf('mailsent') > -1) {
+            Swal.fire(
+                'Success!',
+                'Your message has been sent.',
+                'success'
+            ).then(() => {
+                const url = new URL(window.location.href);
+                url.searchParams.delete('mailsent');
+                window.history.replaceState(null, null, url);
+            });
+        }
+        if (window.location.search.indexOf('mailsenterror') > -1) {
+            Swal.fire(
+                'Error!',
+                'Your message has not been sent.',
+                'error'
+            ).then(() => {
+                const url = new URL(window.location.href);
+                url.searchParams.delete('mailsenterror');
+                window.history.replaceState(null, null, url);
+            });
+        }
+        
             // Handle form submission via AJAX
                 const form = document.querySelector('form');
                 form.addEventListener('submit', (event) => {
