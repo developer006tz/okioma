@@ -40,7 +40,7 @@
     <!-- BOTTOM NAV -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
                 <div class="img-logo">
                     <img class="img-fluid" src="logo.gif" alt="company-logo">
                 </div>
@@ -52,7 +52,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Startsida</a>
+                        <a class="nav-link" href="index.php">Startsida</a>
                     </li>
                     
                 </ul>

@@ -1,3 +1,7 @@
+<?php
+// Only process the form if it is submitted via POST
+include('check_response.php');
+?>
 <!doctype html>
 <html lang="en">
 
@@ -61,7 +65,7 @@
                         <a class="nav-link" href="#varja-tjanster">Våra tjänster</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="boka-hjalp.html">Boka hjälp</a>
+                        <a class="nav-link" href="boka-hjalp.php">Boka hjälp</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#bestall-en-soptunna">Beställ soptunna</a>
@@ -87,7 +91,7 @@
                         <h6 class="text-white text-uppercase">Vi på Okioma.se är snabba</h6>
                         <h1 class="display-3 my-4">Vi är effektiva<br />och starka.</h1>
                         <a href="#" class="btn btn-brand">Komma igång</a>
-                        <a href="boka-hjalp.html" class="btn btn-outline-light ms-3">Gå med oss</a>
+                        <a href="boka-hjalp.php" class="btn btn-outline-light ms-3">Gå med oss</a>
                     </div>
                 </div>
             </div>
@@ -99,7 +103,7 @@
                         <h6 class="text-white text-uppercase">Nar som helst, vad som helst och vart som helst. Xpresshelp!</h6>
                         <h1 class="display-3 my-4">Vi erbjuder avlastning i vardagssysslor <br />och tungt arbete</h1>
                         <a href="#" class="btn btn-brand">Komma igång</a>
-                        <a href="boka-hjalp.html" class="btn btn-outline-light ms-3">Gå med oss</a>
+                        <a href="boka-hjalp.php" class="btn btn-outline-light ms-3">Gå med oss</a>
                     </div>
                 </div>
             </div>
@@ -583,50 +587,30 @@
             }
 
             // Handle form submission via AJAX
-                const form = document.querySelector('form');
-                form.addEventListener('submit', (event) => {
-                    event.preventDefault
-                    const formData = new FormData(form);
-                    const xhr = new XMLHttpRequest();
-                    xhr.open(form.method, form.action);
-                    xhr.setRequestHeader('Accept', 'application/json');
-                    xhr.onreadystatechange = () => {
-                        if (xhr.readyState !== XMLHttpRequest.DONE) return;
-                        if (xhr.status === 200) {
-                            // Handle success response
-                            const response = JSON.parse(xhr.response);
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Success',
-                                text: response.message,
-                            });
-                            form.reset();
-                        } else {
-                            // Handle error response
-                            const response = JSON.parse(xhr.response);
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Error',
-                                text: response.message,
-                            });
-                        }
-                        //catch error
-                        
-
-                    };
-                    xhr.send(formData);
-                }).catch(error => {
-                    console.error('Error:', error);
-                    // Display error message
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong! Please try again later.',
-                    });
-                });
-
-
-
+                // Check if a response is stored in the session
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'check_response.php');
+            xhr.setRequestHeader('Accept', 'application/json');
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState !== XMLHttpRequest.DONE) return;
+                const response = JSON.parse(xhr.responseText);
+                if (response.status === 'success') {
+                    // Handle successful form submission
+                    Swal.fire(
+                        'Success!',
+                        response.message,
+                        'success'
+                    );
+                } else if (response.status === 'error') {
+                    // Handle error
+                    Swal.fire(
+                        'Error',
+                        response.message,
+                        'error'
+                    );
+                }
+            };
+            xhr.send();
     </script>
     
 </body>
