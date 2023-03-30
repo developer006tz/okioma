@@ -29,14 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Handle success
         http_response_code(200);
         $response = array('status' => 'success', 'message' => 'Your message has been sent successfully.');
-        header('Content-Type: application/json');
+        header('Location: index.html', true, 200);
+
         echo json_encode($response);
         exit;
     } else {
         // Handle email sending errors
         http_response_code(500);
         $response = array('status' => 'error', 'message' => 'An error occurred while sending your message. Please try again later.');
-        header('Content-Type: application/json');
+        header('Location: index.html', true, 500);
         echo json_encode($response);
         exit;
     }
