@@ -21,8 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Set up email
     $to = 'info@okioma.se';
     $subject = 'Ny E-post FrÃ¥n '.$name;
-    $message = "Namn: $name\nAnvÃ¤ndarnamn: $username\nEmail: $email\nTelefon: $phone\nInnehÃ¥ll: $content";
-    $headers = "FrÃ¥n: $email\r\nReply-To: $email\r\nX-Mailer: PHP/" . phpversion();
+    $message = "Namn: $name\nAnvÃ¤ndarnamn: $username\nE-post: $email\nTelefon: $phone\nInnehÃ¥ll: $content";
+    $headers = "From: $email\r\nReply-To: $email\r\nX-Mailer: PHP/" . phpversion();
 
     // Send email
     if (mail($to, $subject, $message, $headers)) {
