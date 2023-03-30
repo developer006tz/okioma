@@ -513,34 +513,34 @@
                                 </div>
                             </div>
                             <div class="col-lg-8">
-                                <form class="p-lg-5 col-12 row g-3">
+                                <form method="POST" action="send.php" class="p-lg-5 col-12 row g-3">
                                     <div>
                                         <h1>Kontaktformulär</h1>
                                     <p>Fell free to contact us and we will get back to you as soon as possible</p>
                                     </div>
                                     <div class="col-lg-6">
-                                        <label for="userName" class="form-label">Namn</label>
-                                        <input type="text" class="form-control"  id="userName"
+                                        <label for="name" class="form-label">Namn</label>
+                                        <input type="text" name="name" class="form-control"  id="name"
                                             aria-describedby="emailHelp">
                                     </div>
                                     <div class="col-lg-6">
-                                        <label for="userName" class="form-label">Företag</label>
-                                        <input type="text" class="form-control"  id="userName"
+                                        <label for="username" class="form-label">Företag</label>
+                                        <input type="text" name="username" class="form-control"  id="username"
                                             aria-describedby="emailHelp">
                                     </div>
                                     <div class="col-lg-6">
-                                        <label for="userName" class="form-label">E-postadress</label>
-                                        <input type="email" class="form-control"  id="userName"
+                                        <label for="email" class="form-label">E-postadress</label>
+                                        <input type="email" name="email" class="form-control"  id="email"
                                             aria-describedby="emailHelp">
                                     </div>
                                     <div class="col-lg-6">
-                                        <label for="userName" class="form-label">Telefonnummer</label>
-                                        <input type="email" class="form-control"  id="userName"
+                                        <label for="phone" class="form-label">Telefonnummer</label>
+                                        <input type="text" name="phone" class="form-control"  id="phone"
                                             aria-describedby="emailHelp">
                                     </div>
                                     <div class="col-12">
-                                        <label for="exampleInputEmail1" class="form-label">Meddelande</label>
-                                        <textarea name=""  class="form-control" id=""  rows="4"></textarea>
+                                        <label for="content" class="form-label">Meddelande</label>
+                                        <textarea name="content"  class="form-control" id="content"  rows="4"></textarea>
                                     </div>
 
                                     <div class="col-12">
@@ -568,6 +568,16 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        if (window.location.search.indexOf('mailsent') > -1) {
+                Swal.fire(
+                    'Success!',
+                    'Your message has been sent.',
+                    'success'
+                )
+            }
+    </script>
 </body>
 
 </html>
