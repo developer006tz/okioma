@@ -12,8 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($name) || empty($email) || empty($content)) {
         // Handle form validation errors
         http_response_code(400);
-        $response = array('status' => 'error', 'message' => 'Please fill in all required fields.');
-        echo json_encode($response);
+        echo 'Please fill in all required fields.';
         exit;
     }
 
@@ -25,16 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send email
     if (mail($to, $subject, $message, $headers)) {
-        // Handle success
-        http_response_code(200);
-        $response = array('status' => 'success', 'message' => 'Your message has been sent successfully.');
-        echo json_encode($response);
+        // Redirect to index.html with success message
+        header('Location: index.html?mailsent');
         exit;
     } else {
         // Handle email sending errors
         http_response_code(500);
-        $response = array('status' => 'error', 'message' => 'An error occurred while sending your message. Please try again later.');
-        echo json_encode($response);
+        echo 'An error occurred while sending your message. Please try again later.';
         exit;
     }
 }
