@@ -506,8 +506,8 @@
                                         <textarea name="content"  class="form-control" id="content"  rows="4"></textarea>
                                     </div>
                                     <div class="col-12 modal-close-submit d-flex justify-content-between" >
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">utgång</button>
-                                        <button type="submit" class="btn btn-brand">Skicka</button>
+                                        <button type="button" class="btn btn-modal btn-secondary" data-bs-dismiss="modal">utgång</button>
+                                        <button type="submit" class="btn btn-modal btn-brand">Skicka</button>
                                     </div>
                                 </form>
                             </div>
