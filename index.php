@@ -24,7 +24,7 @@
                         <a class="nav-link" href="#varja-tjanster">Våra tjänster</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="boka-hjalp.php">Boka hjälp</a>
+                        <a class="nav-link" href="bokahjalp.php">Boka hjälp</a>
                     </li>
                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#bestall-en-soptunna">Beställ soptunna</a>
@@ -50,7 +50,7 @@
                         <h6 class="text-white text-uppercase">Vi på Okioma.se är snabba</h6>
                         <h1 class="display-3 my-4">Vi är effektiva<br />och starka.</h1>
                         <a href="#" class="btn btn-brand">Komma igång</a>
-                        <a href="boka-hjalp.php" class="btn btn-outline-light ms-3">Gå med oss</a>
+                        <a href="bokahjalp.php" class="btn btn-outline-light ms-3">Gå med oss</a>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                         <h6 class="text-white text-uppercase">Nar som helst, vad som helst och vart som helst. Xpresshelp!</h6>
                         <h1 class="display-3 my-4">Vi erbjuder avlastning i vardagssysslor <br />och tungt arbete</h1>
                         <a href="#" class="btn btn-brand">Komma igång</a>
-                        <a href="boka-hjalp.php" class="btn btn-outline-light ms-3">Gå med oss</a>
+                        <a href="bokahjalp.php" class="btn btn-outline-light ms-3">Gå med oss</a>
                     </div>
                 </div>
             </div>

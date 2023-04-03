@@ -9,10 +9,11 @@
                     <img class="img-fluid" src="logo.gif" alt="company-logo">
                 </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <a class="btn btn-brand " href="index.php">Startsida</a>
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -42,53 +43,53 @@
             
             <div class="row gy-4">
                 <div class="col-lg-4 col-sm-12 bg-cover img-fluid" >
-                <img src="img/hjalp.jpg" class="img-fluid" alt="">
+                <img src="img/bokahjalp.jpg" class="img-fluid" alt="">
                     
                 </div>
                 <div class="col-lg-8">
-                    <form class="p-lg-5 col-12 row g-3">
+                    <form method="POST" action="hjalp.php" class="p-lg-5 col-12 row g-3">
                         <div>
                             <h1>Bokningsförfrågan</h1>
                         </div>
                         <div class="col-lg-6">
                             <label for="userName" class="form-label">Namn</label>
-                            <input type="text" class="form-control"  id="userName"
-                                aria-describedby="emailHelp">
+                            <input type="text" name="name" class="form-control"  id="userName"
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="col-lg-6">
                             <label for="userName" class="form-label">E-postadress</label>
-                            <input type="text" class="form-control"  id="userName"
-                                aria-describedby="emailHelp">
+                            <input type="text" class="form-control" name="email"  id="userName"
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="col-12">
                             <label for="userName" class="form-label">Telefonnummer</label>
-                            <input type="email" class="form-control"  id="userName"
-                                aria-describedby="emailHelp">
+                            <input type="email" class="form-control" name="phone"  id="userName"
+                                aria-describedby="emailHelp" required>
                         </div>
                         <div class="col-12">
                             <label for="exampleInputEmail1" class="form-label">Startdadum</label>
-                            <input type="text" name=""  class="form-control" id=""
-                                rows="4">
+                            <input type="text" name="startdum"  class="form-control" id=""
+                                rows="4" required>
                         </div>
                         <div class="col-12">
                             <label for="exampleInputEmail1" class="form-label">Typ av hjälp</label>
-                            <input type="text" name=""  class="form-control" id="" rows="4">
+                            <input type="text" name="hjalp"  class="form-control" id="" rows="4" required>
                         </div>
                         <div class="col-12">
                             <label for="exampleInputEmail1" class="form-label">Tid</label>
-                            <input type="text" name=""  class="form-control" id="" rows="4">
+                            <input type="text" name="tid"  class="form-control" id="did" rows="4" required>
                         </div>
                         <div class="col-12">
                             <label for="exampleInputEmail1" class="form-label">Org.nr / Person.nr (behövs vid faktura)</label>
-                            <input type="text" name=""  class="form-control" id="" rows="4">
+                            <input type="text" name="person"  class="form-control" id="person" rows="4" required>
                         </div>
                         <div class="col-12">
                             <label for="exampleInputEmail1" class="form-label">Adress</label>
-                            <input type="text" name=""  class="form-control" id="" rows="4">
+                            <input type="text" name="address"  class="form-control" id="address" rows="4" required>
                         </div>
                         <div class="col-12">
                             <label for="exampleInputEmail1" class="form-label">Meddelande</label>
-                            <input type="text" name=""  class="form-control" id="" rows="4">
+                            <input type="text" name="medde"  class="form-control" id="medde" rows="4" required>
                         </div>
         
                         <div class="col-12">
@@ -157,7 +158,7 @@
                                     <div class="col-12">
                                         <label for="userName" class="form-label">Email address</label>
                                         <input type="email" class="form-control" placeholder="Johndoe@example.com"
-                                            id="userName" aria-describedby="emailHelp">
+                                            id="userName" aria-describedby="emailHelp" required>
                                     </div>
                                     <div class="col-12">
                                         <label for="exampleInputEmail1" class="form-label">Enter Message</label>
@@ -177,12 +178,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
 
 
 
