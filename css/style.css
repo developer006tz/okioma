@@ -198,6 +198,10 @@ section {
     #navbarNav {
         margin-top: 40px;
     }
+
+    .modal-close-submit{
+        padding-bottom: 20px;
+    }
 }
 
 .intro {margin-bottom: 36px;
