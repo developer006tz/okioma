@@ -26,9 +26,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="boka-hjalp.php">Boka hjälp</a>
                     </li>
-                    <li class="nav-item">
+                   <!-- <li class="nav-item">
                         <a class="nav-link" href="#bestall-en-soptunna">Beställ soptunna</a>
-                    </li>
+                    </li>-->
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#reviews">Recensioner</a>
                     </li> -->
@@ -300,7 +300,7 @@
         </div>
     </section>-->
 
-    <section id="bestall-en-soptunna">
+    <!--<section id="bestall-en-soptunna">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -388,7 +388,7 @@
                
             </div>
         </div>
-    </section>
+    </section>-->
 
     <footer>
         <div class="footer-top text-center">
