@@ -41,7 +41,7 @@
         <div class="container">
             
             <div class="row gy-4">
-                <div class="col-lg-4 col-sm-12 bg-cover img-fluid" style="background-image: url(img/vectors/moving_.png); min-height:300px;">
+                <div class="col-lg-4 col-sm-12 bg-cover img-fluid" style="background-image: url(img/bokahjalp.jpg); min-height:300px;">
                     
                 </div>
                 <div class="col-lg-8">
