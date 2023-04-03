@@ -193,6 +193,13 @@ section {
     color: #fff;
 }
 
+/* i have id navbarNav  i want to write css media query to add margin top to 20px when in mobile view */
+@media (max-width: 991px) {
+    #navbarNav {
+        margin-top: 40px;
+    }
+}
+
 .intro {margin-bottom: 36px;
 text-align: center;}
 

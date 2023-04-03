@@ -173,7 +173,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="service">
-                        <img src="img/drilling.jpg" alt="">
+                        <img src="img/rivning.jpg" alt="">
                         <h5>Rivning</h5>
                         <p>Vi utför små som stora uppdrag inom betonghålstagning och rivning! Vi är starka och kan riva väggar och golv, samt ta ut
                         hela inredningar och köra dem till återvinningen. Vi hjälper till att riva vad som helst, när som helst!</p>
@@ -505,8 +505,8 @@
                                         <label for="content" class="form-label">Meddelande</label>
                                         <textarea name="content"  class="form-control" id="content"  rows="4"></textarea>
                                     </div>
-
                                     <div class="col-12">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">utgång</button>
                                         <button type="submit" class="btn btn-brand">Skicka</button>
                                     </div>
                                 </form>
